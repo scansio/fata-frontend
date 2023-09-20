@@ -1,0 +1,79 @@
+{
+  "insecure": [
+    {
+      "path": "/signup",
+      "component": "SignUp"
+    },
+    {
+      "path": "/forget-password",
+      "component": "ForgetPassword"
+    },
+    {
+      "path": "/terms-and-conditions",
+      "component": "TermsAndConditions"
+    },
+    {
+      "path": "/privacy-policy",
+      "component": "PrivacyPolicy"
+    },
+    {
+      "path": "/about-us",
+      "component": "AboutUs"
+    }
+  ],
+
+  "secure": [
+    {
+      "path": "/home",
+      "component": "Dashboard"
+    },
+    {
+      "path": "/exchanger",
+      "component": "Exchanger"
+    },
+    {
+      "path": "/wallet",
+      "component": "Wallet"
+    },
+    {
+      "path": "/setting",
+      "component": "Setting"
+    },
+    {
+      "path": "/trade",
+      "component": "Trade"
+    },
+    {
+      "path": "/upgrade",
+      "component": "Upgrade"
+    },
+    {
+      "path": "/referral",
+      "component": "Referral"
+    },
+    {
+      "path": "/chart",
+      "component": "Chart"
+    },
+    {
+      "path": "/reward",
+      "component": "ComingSoon"
+    },
+    {
+      "path": "/loan",
+      "component": "ComingSoon"
+    },
+    {
+      "path": "/academy",
+      "component": "ComingSoon"
+    },
+    {
+      "path": "/refresh",
+      "component": "Refresh"
+    },
+    {
+      "path": "/auto-trade",
+      "component": "AutoTrade"
+    }
+  ]
+}
