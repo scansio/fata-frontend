@@ -1,6 +1,10 @@
 {
   "insecure": [
     {
+      "path": "/home",
+      "component": "Home"
+    },
+    {
       "path": "/signup",
       "component": "SignUp"
     },
@@ -24,7 +28,7 @@
 
   "secure": [
     {
-      "path": "/home",
+      "path": "/dashboard",
       "component": "Dashboard"
     },
     {
