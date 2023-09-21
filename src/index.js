@@ -13,7 +13,7 @@ import './assets/vendor/libs/popper/popper.js'
 // import "../node_modules/perfect-scrollbar/dist/perfect-scrollbar.js";
 import './assets/vendor/js/menu.js'
 import './assets/js/main.js'
-import '../node_modules/react-toastify/scss/main.scss'
+import './assets/css/custom-style.scss'
 import './assets/vendor/css/core.css'
 import './assets/vendor/css/theme-default.css'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
