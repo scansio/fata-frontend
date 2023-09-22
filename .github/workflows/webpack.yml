@@ -1,10 +1,11 @@
-name: NodeJS with Webpack
+name: Build NodeJS App
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  #push:
+    #branches: [ "main" ]
+  #pull_request:
+    #branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v3
@@ -24,5 +25,20 @@ jobs:
 
     - name: Build
       run: |
+        export CI=false
         npm install
-        npx webpack
+        npm run build
+        
+    - name: Deploy
+      run: |
+        # Remove the existing contents of the main branch
+        git checkout main
+        git rm -r .
+
+        # Copy the build output into the main branch
+        cp -r build/* .
+
+        # Commit the changes
+        git add .
+        git commit -m "Deploy build output"
+        git push origin main
