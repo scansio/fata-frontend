@@ -10,7 +10,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
+    env:
+      SITE_TITLE: "APP NAME"
+      ENVIRONMENT: production
+      REACT_APP_ENVIRONMENT: development
+      PUBLIC_URL: "../"
+      REACT_APP_API_URL: https://api.fataai.com
+      HOST: "../"
+      
     strategy:
       matrix:
         node-version: [18.x]
