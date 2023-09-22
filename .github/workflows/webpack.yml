@@ -28,17 +28,24 @@ jobs:
         export CI=false
         npm install
         npm run build
-        
+
     - name: Deploy
       run: |
         # Remove the existing contents of the main branch
         git checkout main
-        git rm -r .
-
+        git rm -r ./build
+    
         # Copy the build output into the main branch
-        cp -r build/* .
-
+        cp -r build/* ./build
+    
+        # Configure Git with the PAT secret
+        git config --global credential.helper store
+        git config --global user.email "scansioquielom@gmail.com"
+        git config --global user.name "Emmanuel Elom"
+    
         # Commit the changes
         git add .
         git commit -m "Deploy build output"
-        git push origin main
+    
+        # Push the changes using the PAT secret for authentication
+        git push https://github.com/$GITHUB_REPOSITORY.git HEAD:main
