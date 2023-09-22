@@ -1,4 +1,4 @@
-export const BASE = process.env.REACT_APP_ENVIRONMENT === 'development'
+export const BASE = process.env.ENVIRONMENT === 'development'
   ? `${
   window.location.protocol.includes('s:') ? 'https' : 'http'
 }://${window.location.hostname}:5000`
