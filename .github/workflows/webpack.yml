@@ -33,13 +33,13 @@ jobs:
       run: |
         # Remove the existing contents of the main branch
         git checkout main
-        git rm -r -f ./build  # Use -f to force removal
+        #git rm -r -f ./build  # Use -f to force removal
         
         # Create the build directory if it doesn't exist
-        mkdir -p build/
+        #mkdir -p build/
         
         # Copy the build output into the main branch
-        cp -r build/* ./build
+        #cp -r build/* ./build
     
         # Configure Git with the PAT secret
         git config --global credential.helper store
