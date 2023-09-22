@@ -2,7 +2,7 @@
   "name": "fata-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "../",
+  "homepage": "https://fataai.com",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@popperjs/core": "^2.11.6",
