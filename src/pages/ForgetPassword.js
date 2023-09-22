@@ -90,7 +90,7 @@ function ForgetPassword (props) {
             <div className="text-center">
               <Button variant="outline-primary mb-3 text-center">
                 <Link to="/home" className="">
-                  <i className="fas fa-arrow-left fa-lg fa-fw"></i> Go Home
+                  Login
                 </Link>
               </Button>
             </div>
