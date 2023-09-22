@@ -19,6 +19,7 @@ import './assets/vendor/css/theme-default.css'
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import NotFound from './pages/NotFound'
 import Routing from './scripts/Routing'
+import Home from './pages/Home'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 const routing = new Routing()
@@ -32,7 +33,7 @@ root.render(
       <Route
         exact
         path="/"
-        Component={(props) => <Navigate to="/home" {...props} />}
+        Component={(props) => <Home {...props} />}
       />
       <Route
         path="/login"
