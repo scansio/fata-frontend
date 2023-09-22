@@ -1,6 +1,9 @@
-export const BASE = `${
+export const BASE = process.env.REACT_APP_ENVIRONMENT === 'development'
+  ? `${
   window.location.protocol.includes('s:') ? 'https' : 'http'
-}://${window.location.hostname}:5000` // "http://192.168.43.144:5000";
+}://${window.location.hostname}:5000`
+  : process.env.REACT_APP_API_URL
+
 export const API_VERSION = 'v1'
 
 export const ACCEPT_TRADE = '/trade/accept'
