@@ -48,7 +48,7 @@
       "component": "Trade"
     },
     {
-      "path": "/upgrade",
+      "path": "/license",
       "component": "Upgrade"
     },
     {

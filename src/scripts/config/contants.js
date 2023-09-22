@@ -1,6 +1,6 @@
 import md5 from '../md5';
 
-export const SITE_TITLE = 'REACT STARTER';
+export const SITE_TITLE = 'FATA AI';
 export const MILLIS = 1 / 1000;
 export const SECOND = 1;
 export const MINUTE = 60;

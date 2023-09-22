@@ -176,7 +176,7 @@ function Header () {
                       <div className="dropdown-divider"></div>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/upgrade">
+                      <Link className="dropdown-item" to="/license">
                         <i className="fas fa-rocket me-2"></i>
                         <span className="align-middle">License</span>
                       </Link>

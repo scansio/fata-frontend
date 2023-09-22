@@ -27,7 +27,7 @@ function Upgrade (props) {
                   <Nav variant="pills" className="s-grid">
                     <NavItem>
                       <Link
-                        to="../upgrade?tab=upgrades"
+                        to="../license?tab=upgrades"
                         className={`nav-link ${
                           !tab || tab === 'upgrades' ? 'active' : ''
                         }`}
@@ -38,7 +38,7 @@ function Upgrade (props) {
                     </NavItem>{' '}
                     <NavItem>
                       <Link
-                        to="../upgrade?tab=history"
+                        to="../license?tab=history"
                         className={`nav-link ${
                           tab === 'history' ? 'active' : ''
                         }`}

@@ -25,7 +25,7 @@ const dashboardRoutes = [
     icon: 'fas fa-cog'
   },
   {
-    path: '/upgrade',
+    path: '/license',
     name: 'License',
     icon: 'fas fa-rocket'
   }
