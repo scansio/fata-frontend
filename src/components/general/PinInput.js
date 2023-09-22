@@ -1,8 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useMemo, useRef } from 'react'
 import { Col, Row } from 'react-bootstrap'
 
 function PinInput ({ setPin, setDone, length = 4 }) {
+  const getRef = useRef(null)
   const inputsRef = useRef([])
 
   const inputElements = useMemo(() => {
@@ -11,7 +13,7 @@ function PinInput ({ setPin, setDone, length = 4 }) {
     length < 4 && (length = 4)
 
     for (let index = 0; index < length; index++) {
-      const inputRef = useRef(null)
+      const inputRef = getRef()
       inputs.push(
         <input
           ref={inputRef}

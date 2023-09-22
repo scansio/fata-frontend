@@ -50,7 +50,7 @@ function Chart (props) {
             <Col xs="12" sm="12" md="12" lg="9" className="mt-3">
               <Card>
                 <Card.Body>
-                  {tab == 'trades' ? <ChartsTab {...props}/> : <SignalTab {...props}/>}
+                  {{/* <ChartsTab {...props}/> */}}
                 </Card.Body>
               </Card>
             </Col>
