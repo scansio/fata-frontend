@@ -18,7 +18,6 @@ import HumanizeTimestamp from '../../general/HumanizeTimestamp'
 
 function UpgradesTab (props) {
   const urlRef = useRef(ALL_PACKAGE)
-  const [reload, setReload] = useState('')
   const [loading, setLoading] = useState(true)
   const [loadingError, setLoadingError] = useState('')
   const [itemId, setItemId] = useState('')
@@ -71,10 +70,11 @@ function UpgradesTab (props) {
       toast.error(data.data.message)
     } else {
       setShowConfirmUpgrade(false)
-      setReload(!reload)
       toast.success(data.data.message)
+      props.refresh()
     }
   }
+  
   async function renewPackage () {
     let data
     try {
@@ -86,8 +86,8 @@ function UpgradesTab (props) {
       toast.error(data.data.message)
     } else {
       setForRenewal(false)
-      setReload(!reload)
       toast.success(data.data.message)
+      props.refresh()
     }
   }
 
@@ -159,7 +159,6 @@ function UpgradesTab (props) {
       >
         <span>Confirm purchasing license?</span>
       </ModalBox>
-      {reload ? <span></span> : ''}
       <Spinner
         loading={loading}
         loadingError={loadingError}
@@ -168,7 +167,6 @@ function UpgradesTab (props) {
         <PaginatedTable
           url={urlRef.current}
           dataName="packages"
-          reload={reload}
           type="card"
           cardView={cardViewRef}
           primaryKey="code"

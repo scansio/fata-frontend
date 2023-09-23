@@ -17,7 +17,6 @@ import { toast } from 'react-toastify'
 
 function PlanTab (props) {
   const urlRef = useRef(ALL_AUTO_TRADE_DURATION)
-  const [reload, setReload] = useState('')
   const [loading, setLoading] = useState(true)
   const [loadingError, setLoadingError] = useState('')
   const [itemId, setItemId] = useState('')
@@ -69,8 +68,8 @@ function PlanTab (props) {
       toast.error(data.data.message)
     } else {
       setShowConfirmUpgrade(false)
-      setReload(!reload)
       toast.success(data.data.message)
+      props.refresh()
     }
   }
   async function renewPlan () {
@@ -84,8 +83,8 @@ function PlanTab (props) {
       toast.error(data.data.message)
     } else {
       setForRenewal(false)
-      setReload(!reload)
       toast.success(data.data.message)
+      props.refresh()
     }
   }
 
@@ -168,7 +167,6 @@ function PlanTab (props) {
           <PaginatedTable
             url={urlRef.current}
             dataName="autoTradeDurations"
-            reload={reload}
             type="card"
             cardView={cardViewRef}
             primaryKey="code"

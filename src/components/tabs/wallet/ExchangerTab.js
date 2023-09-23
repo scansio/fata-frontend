@@ -35,7 +35,6 @@ function ExchangerTab (props) {
   const [loadId, setLoadId] = useState('')
   const [amount, setAmount] = useState('')
   const [showLoad, setShowLoad] = useState(false)
-  const [reload, setReload] = useState(false)
   const uidRef = useRef(SharedConfig.getLocalData(UID))
   const query = { uid: uidRef.current }
 
@@ -58,7 +57,7 @@ function ExchangerTab (props) {
       setLoadingExchangers(false)
     }
     getMyExchangers()
-  }, [reload])
+  }, [])
 
   async function load (e) {
     setLoading(true)
@@ -82,8 +81,8 @@ function ExchangerTab (props) {
         toast.error(data.data.message)
       } else {
         setShowLoad(false)
-        setReload(!reload)
         toast.success(data.data.message)
+        props.refresh()
       }
     }
     setLoading(false)
@@ -112,8 +111,8 @@ function ExchangerTab (props) {
       } else {
         setShowLoad(false)
         setWithdrawing(false)
-        setReload(!reload)
         toast.success(data.data.message)
+        props.refresh()
       }
     }
     setLoading(false)
@@ -133,8 +132,8 @@ function ExchangerTab (props) {
       if (!data.data.status) {
         toast.error(data.data.message)
       } else {
-        setReload(!reload)
         toast.success(data.data.message)
+        props.refresh()
       }
     }
     setClearing(false)

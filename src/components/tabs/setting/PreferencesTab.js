@@ -23,9 +23,8 @@ import { encodeQuery } from '../../../scripts/misc'
 import Spinner from '../../general/Spinner'
 import { toast } from 'react-toastify'
 
-function PreferencesTab ({ style, className, category }) {
+function PreferencesTab ({ style, className, category, ...props }) {
   const [submitting, setSubmitting] = useState(false)
-  const [reload, setReload] = useState(false)
 
   const [settingsName, setSettingsName] = useState([])
   const [settings, setSettings] = useState([])
@@ -38,7 +37,7 @@ function PreferencesTab ({ style, className, category }) {
       const settingsData = data?.data?.userSettings?.results
       resultSetter(settingsData)
     })
-  }, [reload])
+  }, [])
 
   function resultSetter (settingsData = []) {
     const categories = {}
@@ -106,7 +105,7 @@ function PreferencesTab ({ style, className, category }) {
             toast.error(data?.data?.message)
           } else {
             toast.success(data.data.message)
-            setReload(!reload)
+            props.refresh()
           }
           setSubmitting(false)
         }
@@ -127,7 +126,7 @@ function PreferencesTab ({ style, className, category }) {
             toast.error(data?.data?.message)
           } else {
             toast.success(data.data.message)
-            setReload(!reload)
+            props.refresh()
           }
         }
       })
