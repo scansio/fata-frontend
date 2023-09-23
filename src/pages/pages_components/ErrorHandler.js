@@ -25,9 +25,9 @@ export default class ErrorHandler extends Component {
         <Container fluid>
           <div className="misc-wrapper">
             <h2 className="mb-2 mx-2">An Error has Occured</h2>
-            <p className="mb-4 mx-2">{this.state.error}</p>
-            <Link to="/" className="btn btn-primary">
-              Back to home
+            {/* <p className="mb-4 mx-2">{this.state.error}</p> */}
+            <Link to="/dashboard" className="btn btn-primary">
+              Dashboard
             </Link>
             <div className="mt-3">
               <img
