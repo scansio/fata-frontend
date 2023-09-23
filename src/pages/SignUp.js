@@ -73,12 +73,14 @@ function SignUp () {
             <div className="authentication-wrapper authentication-basic container-p-y">
               <div className="authentication-inner">
                 <div className="text-center my-3">
+                <Link to='../'>
                   <img
                     src="../favicon.ico"
                     height="100"
                     width="100"
                     alt={SharedConfig.getSessionData('SITE_TITLE')}
                   />
+                </Link>
                 </div>
                 <Card>
                   <Card.Body>
@@ -207,7 +209,7 @@ function SignUp () {
                     </form>
 
                     <p className="text-center">
-                      <span>Alreaady Had An Account </span>
+                      <span>Already Had An Account </span>
                       <Link to="/login">
                         <span>Login</span>
                       </Link>

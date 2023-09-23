@@ -75,12 +75,14 @@ function Login ({ setActive = () => {}, authenticate = () => {} }) {
       <div className="authentication-wrapper authentication-basic container-p-y">
         <div className="authentication-inner">
           <div className="text-center my-3">
-            <img
-              src="../favicon.ico"
-              height="100"
-              width="100"
-              alt={SharedConfig.getSessionData('SITE_TITLE')}
-            />
+            <Link to='../'>
+              <img
+                src="../favicon.ico"
+                height="100"
+                width="100"
+                alt={SharedConfig.getSessionData('SITE_TITLE')}
+              />
+            </Link>
           </div>
           <Card>
             <Card.Body>
